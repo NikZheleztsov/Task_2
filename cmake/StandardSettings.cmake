@@ -8,6 +8,7 @@ option(${PROJECT_NAME}_WARNINGS_AS_ERRORS "Treat compiler warnings as errors." O
 # Unit testing
 option(${PROJECT_NAME}_ENABLE_UNIT_TESTING "Enable unit tests for the projects (from the `test` subfolder)." ON)
 option(${PROJECT_NAME}_USE_CATCH2 "Use Catch2 for creating unit tests." OFF)
+option(${CMAKE_PROJECT_NAME}_USE_GTEST OFF)
 
 # Static analyzer
 option(${PROJECT_NAME}_ENABLE_CPPCHECK "Enable static analysis with Cppcheck." ON)

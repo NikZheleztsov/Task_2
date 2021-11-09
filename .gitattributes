@@ -1,0 +1,11 @@
+data filter=lfs diff=lfs merge=lfs -text
+data/generate_numbers.sh filter=lfs diff=lfs merge=lfs -text
+data/test_1e1 filter=lfs diff=lfs merge=lfs -text
+data/test_1e2 filter=lfs diff=lfs merge=lfs -text
+data/test_1e6 filter=lfs diff=lfs merge=lfs -text
+data/test_1e7 filter=lfs diff=lfs merge=lfs -text
+data/test_1e8 filter=lfs diff=lfs merge=lfs -text
+data/test_5 filter=lfs diff=lfs merge=lfs -text
+data/test_1e3 filter=lfs diff=lfs merge=lfs -text
+data/test_1e4 filter=lfs diff=lfs merge=lfs -text
+data/test_1e5 filter=lfs diff=lfs merge=lfs -text

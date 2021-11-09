@@ -33,7 +33,7 @@ foreach(file ${test_sources})
         Catch2::Catch2
         ${${CMAKE_PROJECT_NAME}_TEST_LIB}
     )
-  else()
+  elseif(${CMAKE_PROJECT_NAME}_USE_GTEST)
     find_package(GTest REQUIRED)
     message(STATUS "The GTest is used.")
     target_link_libraries(
@@ -41,6 +41,14 @@ foreach(file ${test_sources})
       PUBLIC
         GTest::GTest
         GTest::Main
+        ${${CMAKE_PROJECT_NAME}_TEST_LIB}
+      )
+  else()
+    find_package(CMocka CONFIG REQUIRED)
+    target_link_libraries(
+      ${test_name}_Tests
+      PUBLIC
+        cmocka
         ${${CMAKE_PROJECT_NAME}_TEST_LIB}
       )
   endif()

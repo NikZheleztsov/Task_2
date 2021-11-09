@@ -12,5 +12,5 @@ set(exe_sources
 )
 
 set(test_sources
-    src/test_lis.c
+    src/cmocka_lis.c
 )

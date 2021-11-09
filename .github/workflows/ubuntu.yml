@@ -40,11 +40,6 @@ jobs:
       #run: cmake -Bbuild -DCMAKE_INSTALL_PREFIX=$GITHUB_WORKSPACE/$INSTALL_LOCATION 
       run: cmake -Bbuild
 
-    - uses: actions/upload-artifact@v2
-      with:
-        name: artifact
-        path: /home/runner/work/Task_2/Task_2/build/CMakeFiles/CMakeError.log
-      
     - name: build
       run: cmake --build build --config $BUILD_TYPE -j4
 
