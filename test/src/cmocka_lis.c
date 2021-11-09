@@ -18,21 +18,22 @@ stress_test ()
 
   int right_length[] = { 3, 4, 20, 52, 195, 599, 1784, 4313, 5000 };
 
+  FILE* out_file = fopen("temp.txt", "w");
+  if (!out_file)
+  {
+    fprintf (stderr, "Unable to open file for writing\n");
+    exit (FAILURE);
+  }
+
   for (int i = 0; i < 9; ++i)
     {
       int *input_arr = NULL;
       size_t arr_size = 0;
       FILE *input_file = fopen (file_name[i], "r");
-      FILE* out_file = fopen("temp.txt", "w");
+
       if (!input_file)
         {
           fprintf (stderr, "Unable to open file '%s'\n", file_name[i]);
-          exit (FAILURE);
-        }
-
-      if (!out_file)
-        {
-          fprintf (stderr, "Unable to open file for writing\n");
           exit (FAILURE);
         }
 

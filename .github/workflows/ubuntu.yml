@@ -32,7 +32,7 @@ jobs:
           sudo apt-get update -y
           sudo apt-get install -y libcmocka0
           sudo apt-get install -y libcmocka-dev
-          sudo apt-get install -y cppcheck
+          sudo apt-get install -y cppcheck, valgrind
 
     - name: configure
       run: cmake -Bbuild -DCMAKE_PREFIX_PATH=/usr/lib || \
@@ -44,11 +44,8 @@ jobs:
     - name: run tests
       run: |
         cd build
-        ctest -C $BUILD_TYPE -VV
+        valgrind ctest -VV
 
     - name: Code coverage using Codecov 
       run: bash <(curl -s https://codecov.io/bash) 
-
-    - name: install project
-      run: cmake --build build --target install --config Release 
 
