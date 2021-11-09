@@ -3,8 +3,6 @@ name: Ubuntu
 on:
   push:
     branches: [ dev ]
-  pull_request:
-    branches: [ master ]
 
 env:
   BUILD_TYPE: Release
@@ -44,7 +42,8 @@ jobs:
     - name: run tests
       run: |
         cd build/test
-        valgrind ./cmocka_lis_Tests
+        chmod +r ./test*
+        valgrind ctest -VV
 
     - name: Code coverage using Codecov 
       run: bash <(curl -s https://codecov.io/bash) 
