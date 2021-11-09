@@ -34,7 +34,8 @@ jobs:
           sudo apt-get install -y libcmocka-dev
 
     - name: configure
-      run: cmake -Bbuild -DCMAKE_PREFIX_PATH=/usr/lib
+      run: cmake -Bbuild -DCMAKE_PREFIX_PATH=/usr/lib || \
+       cat build/CMakeFiles/CMakeOutput.log 
 
     - name: build
       run: cmake --build build --config $BUILD_TYPE -j4
