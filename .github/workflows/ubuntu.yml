@@ -44,7 +44,7 @@ jobs:
     - name: run tests
       run: |
         cd build/test
-        valgrind ctest -VV
+        valgrind ./cmocka_lis_Tests
 
     - name: Code coverage using Codecov 
       run: bash <(curl -s https://codecov.io/bash) 
