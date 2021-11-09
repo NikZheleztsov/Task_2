@@ -35,7 +35,7 @@ jobs:
 
     - name: configure
       run: cmake -Bbuild -DCMAKE_PREFIX_PATH=/usr/lib || \
-       cat build/CMakeFiles/CMakeOutput.log 
+       tail -n 30 build/CMakeFiles/CMakeOutput.log 
 
     - name: build
       run: cmake --build build --config $BUILD_TYPE -j4
