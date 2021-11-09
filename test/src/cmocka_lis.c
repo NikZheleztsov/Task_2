@@ -23,9 +23,16 @@ stress_test ()
       int *input_arr = NULL;
       size_t arr_size = 0;
       FILE *input_file = fopen (file_name[i], "r");
+      FILE* out_file = fopen("temp.txt", "w");
       if (!input_file)
         {
           fprintf (stderr, "Unable to open file '%s'\n", file_name[i]);
+          exit (FAILURE);
+        }
+
+      if (!out_file)
+        {
+          fprintf (stderr, "Unable to open file for writing\n");
           exit (FAILURE);
         }
 
@@ -46,7 +53,7 @@ stress_test ()
       for (size_t i = 0; i < arr_size; ++i)
         fscanf (input_file, "%d", &input_arr[i]);
 
-      return_value = measure_and_solve (&input_arr, arr_size, stdout);
+      return_value = measure_and_solve (&input_arr, arr_size, out_file);
       assert_int_equal (right_length[i], return_value);
 
       fclose (input_file);

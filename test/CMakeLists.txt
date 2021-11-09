@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15)
 
 project(
   ${CMAKE_PROJECT_NAME}Tests
-  LANGUAGES CXX
+  LANGUAGES C
 )
 
 message(STATUS "Adding tests under ${CMAKE_PROJECT_NAME}Tests...")
