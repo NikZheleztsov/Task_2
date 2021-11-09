@@ -33,7 +33,7 @@ jobs:
           sudo apt-get install -y libcmocka0
 
     - name: configure
-      run: cmake -Bbuild -DCMAKE_INSTALL_PREFIX=/usr
+      run: cmake -Bbuild -DCMocka_DIR=/usr/lib/cmake/cmocka
 
     - name: build
       run: cmake --build build --config $BUILD_TYPE -j4
