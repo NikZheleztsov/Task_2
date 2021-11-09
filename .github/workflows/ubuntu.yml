@@ -30,7 +30,7 @@ jobs:
       if: ${{ steps.cache.output.cache-hit != 'true' }}
       run: |
           sudo apt-get update -y
-          sudo apt-get install -y cmocka-doc
+          sudo apt-get install -y cmocka
 
     - name: configure
       run: cmake -Bbuild
