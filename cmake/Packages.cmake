@@ -1,0 +1,6 @@
+if (ENABLE_HUNTER)
+    if (${PROJECT_NAME}_USE_CATCH2)
+        hunter_add_package(Catch)
+    endif()
+        hunter_add_package(GTest)
+endif()
