@@ -26,12 +26,13 @@ jobs:
         path: ${{ github.workspace }}/${{ env.INSTALL_LOCATION }}
         key: ${{ runner.os }}-dependencies
 
-    - name: install CMocka
+    - name: install dependencies
       if: ${{ steps.cache.output.cache-hit != 'true' }}
       run: |
           sudo apt-get update -y
           sudo apt-get install -y libcmocka0
           sudo apt-get install -y libcmocka-dev
+          sudo apt-get install -y glibc
 
     - name: configure
       run: cmake -Bbuild -DCMAKE_PREFIX_PATH=/usr/lib || \
