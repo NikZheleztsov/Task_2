@@ -1,7 +1,7 @@
 #ifndef LIS_H
 #define LIS_H
-#include <stdio.h>
+#include <stdlib.h>
 
-int measure_and_solve (int **input_arr, size_t arr_size, FILE *out);
+int find_lis (int *arr, size_t size, int *result);
 
 #endif

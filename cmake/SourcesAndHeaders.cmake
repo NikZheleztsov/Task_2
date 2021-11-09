@@ -4,10 +4,10 @@ set(lis_sources
 
 set(lis_headers
     include/lis.h
-    include/return_status.h
 )
 
 set(exe_sources
+    src/interprocess.c
     src/main.c
 )
 
