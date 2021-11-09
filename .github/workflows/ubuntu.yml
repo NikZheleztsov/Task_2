@@ -32,7 +32,8 @@ jobs:
           sudo apt-get update -y
           sudo apt-get install -y libcmocka0
           sudo apt-get install -y libcmocka-dev
-          sudo apt-get install -y cppcheck, valgrind
+          sudo apt-get install -y cppcheck
+          sudo apt-get install -y valgrind
 
     - name: configure
       run: cmake -Bbuild -DCMAKE_PREFIX_PATH=/usr/lib || \
